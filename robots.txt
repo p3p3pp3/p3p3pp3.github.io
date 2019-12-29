@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://p3p3pp3.github.io/sitemap.xml

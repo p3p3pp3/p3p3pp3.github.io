@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>后端环境部署笔记 - P3的Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="p3p3pp3" /><meta name="description" content="安装Ubuntu14TLS Server 下载Ubuntu14TLS安装镜像 &amp;gt; http://www.ubuntu.com/download/server 挂载虚拟机启动安装，语言要选en 更换apt源，替换文件 /etc/apt/sources.list 安装tokumx https://www.percona.com/doc/percona-tokumx/installation_from_packages.html" /><meta name="keywords" content="P3, blog, coding" />
+
+
+
+<meta name="google-site-verification" content="iTJj3dp57yfylJL_-Z2_nwxz5Dz6jnf1xAwgKb6TS_g" />
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://p3p3pp3.github.io/post/2015/%E5%90%8E%E7%AB%AF%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0.html" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="后端环境部署笔记" />
+<meta property="og:description" content="安装Ubuntu14TLS Server 下载Ubuntu14TLS安装镜像 &gt; http://www.ubuntu.com/download/server 挂载虚拟机启动安装，语言要选en 更换apt源，替换文件 /etc/apt/sources.list 安装tokumx https://www.percona.com/doc/percona-tokumx/installation_from_packages.html" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://p3p3pp3.github.io/post/2015/%E5%90%8E%E7%AB%AF%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0.html" />
+<meta property="article:published_time" content="2015-11-04T23:06:39&#43;08:00"/>
+<meta property="article:modified_time" content="2015-11-04T23:06:39&#43;08:00"/>
+
+<meta itemprop="name" content="后端环境部署笔记">
+<meta itemprop="description" content="安装Ubuntu14TLS Server 下载Ubuntu14TLS安装镜像 &gt; http://www.ubuntu.com/download/server 挂载虚拟机启动安装，语言要选en 更换apt源，替换文件 /etc/apt/sources.list 安装tokumx https://www.percona.com/doc/percona-tokumx/installation_from_packages.html">
+
+
+<meta itemprop="datePublished" content="2015-11-04T23:06:39&#43;08:00" />
+<meta itemprop="dateModified" content="2015-11-04T23:06:39&#43;08:00" />
+<meta itemprop="wordCount" content="489">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="后端环境部署笔记"/>
+<meta name="twitter:description" content="安装Ubuntu14TLS Server 下载Ubuntu14TLS安装镜像 &gt; http://www.ubuntu.com/download/server 挂载虚拟机启动安装，语言要选en 更换apt源，替换文件 /etc/apt/sources.list 安装tokumx https://www.percona.com/doc/percona-tokumx/installation_from_packages.html"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">P3的Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">P3的Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">后端环境部署笔记</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-11-04 </span>
+        
+          <span class="more-meta"> 约 489 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#安装ubuntu14tls-server">安装Ubuntu14TLS Server</a></li>
+<li><a href="#安装tokumx">安装tokumx</a></li>
+<li><a href="#安装redis">安装redis</a></li>
+<li><a href="#安装elasticsearch">安装elasticsearch</a></li>
+<li><a href="#安装nginx">安装nginx</a></li>
+<li><a href="#安装kibana">安装kibana</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h2 id="安装ubuntu14tls-server">安装Ubuntu14TLS Server</h2>
+
+<ul>
+<li><p>下载Ubuntu14TLS安装镜像<br />
+&gt;  <a href="http://www.ubuntu.com/download/server">http://www.ubuntu.com/download/server</a></p></li>
+
+<li><p>挂载虚拟机启动安装，语言要选en</p></li>
+
+<li><p>更换apt源，替换文件 /etc/apt/sources.list</p></li>
+</ul>
+
+<h2 id="安装tokumx">安装tokumx</h2>
+
+<blockquote>
+<p><a href="https://www.percona.com/doc/percona-tokumx/installation_from_packages.html">https://www.percona.com/doc/percona-tokumx/installation_from_packages.html</a></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A
+ 
+$ echo &#34;deb http://repo.percona.com/apt &#34;$(lsb_release -sc)&#34; main&#34; | sudo tee /etc/apt/sources.list.d/percona.list
+ 
+$ echo &#34;deb-src http://repo.percona.com/apt &#34;$(lsb_release -sc)&#34; main&#34; | sudo tee -a /etc/apt/sources.list.d/percona.list
+ 
+$ sudo apt-get update
+ 
+$ sudo apt-get install tokumx-enterprise
+ </pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>To control the mongod data server, use service:<br />
+<br /></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo service tokumx start
+$ sudo service tokumx restart
+$ sudo service tokumx stop</pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>To enable Percona TokuMX on boot, use chkconfig:<br />
+<br /></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo chkconfig tokumx on
+$ sudo chkconfig tokumx off</pre></td></tr></table>
+</div>
+</div>
+<h2 id="安装redis">安装redis</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">sudo add-apt-repository -y ppa:rwky/redis
+sudo apt-get update
+sudo apt-get install -y redis-server</pre></td></tr></table>
+</div>
+</div>
+<h2 id="安装elasticsearch">安装elasticsearch</h2>
+
+<ul>
+<li><p>安装java8</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+java -version</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>下载es2.0</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.3.4/elasticsearch-2.3.4.deb
+sudo dpkg -ielasticsearch-2.3.4.deb
+sudo vim /etc/elasticsearch/elasticsearch.yml</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>开放其他设备的访问</p></li>
+
+<li><p>安装IK插件</p></li>
+</ul>
+
+<blockquote>
+<p><a href="https://github.com/medcl/elasticsearch-analysis-ik">https://github.com/medcl/elasticsearch-analysis-ik</a></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">sudo apt-get install git
+git clone  https://github.com/medcl/elasticsearch-analysis-ik
+cd elasticsearch-analysis-ik
+sudo apt-get install maven
+mvn compile
+mvn package
+su root
+ 
+cp target/releases/elasticsearch-analysis-ik-1.5.0.zip /usr/share/elasticsearch/plugins/ik/
+cd /usr/share/elasticsearch/plugins/ik/
+unzip elasticsearch-analysis-ik-1.5.0.zip</pre></td></tr></table>
+</div>
+</div>
+<p>elasticearch的配置文件在 /etc/elasticsearch下<br />
+拷贝dict files</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cd /home/guowei/elasticsearch-analysis-ik/config
+cp ik /etc/elasticsearch/ -r
+service elasticsearch restart</pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>安装head插件<br />
+&gt;  <a href="http://mobz.github.io/elasticsearch-head/">http://mobz.github.io/elasticsearch-head/</a><br />
+<br />
+<br /></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cd /user/share/
+elasticsearch/bin/plugin install mobz/elasticsearch-head
+ </pre></td></tr></table>
+</div>
+</div>
+<p>访问路径  <a href="http://localhost:9200/_plugin/head/">http://localhost:9200/_plugin/head/</a></p>
+
+<ul>
+<li>安装kopf<br />
+<br />
+<br /></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cd /user/share/
+ 
+elasticsearch/bin/plugin install lmenezes/elasticsearch-kopf</pre></td></tr></table>
+</div>
+</div>
+<p>访问路径    <a href="http://localhost:9200/_plugin/">http://localhost:9200/_plugin/</a> kopf/</p>
+
+<h2 id="安装nginx">安装nginx</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">sudo apt-get update
+sudo apt-get install nginx</pre></td></tr></table>
+</div>
+</div>
+<h2 id="安装kibana">安装kibana</h2>
+
+<p>es2.0 用这个包<a href="https://www.elastic.co/downloads/past-releases/kibana-4-2.2">https://www.elastic.co/downloads/past-releases/kibana-4-2.2</a><br />
+步骤见<br />
+<a href="https://www.unixmen.com/install-kibana-ubuntu-14-04/">https://www.unixmen.com/install-kibana-ubuntu-14-04/</a><br />
+<a href="https://www.elastic.co/guide/en/marvel/2.0/installing-marvel.html#installing-marvel">https://www.elastic.co/guide/en/marvel/2.0/installing-marvel.html#installing-marvel</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">p3p3pp3</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2015-11-04</span>
+  </p>
+  
+  
+</div><footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/2015/im%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%95%86%E6%95%B4%E7%90%86.html">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">IM云服务商整理</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2015/sql-server%E6%9F%A5%E8%AF%A2%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html">
+            <span class="next-text nav-default">SQL Server查询性能优化补充</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="lv-container" data-id="city" data-uid="MTAyMC80MjYyNC8xOTE3MQ==">
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+
+        if (typeof LivereTower === 'function') { return; }
+
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+    <noscript>Please enable JavaScript to view the comments powered by <a href="https://livere.com/">LiveRe.</a></noscript>
+    </div>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://p3p3pp3.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">p3p3pp3</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-134997356-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>

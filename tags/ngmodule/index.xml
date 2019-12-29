@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ngmodule on P3的Blog</title>
+    <link>https://p3p3pp3.github.io/tags/ngmodule.html</link>
+    <description>Recent content in ngmodule on P3的Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 04 Apr 2019 14:02:40 +0800</lastBuildDate>
+    
+	<atom:link href="https://p3p3pp3.github.io/tags/ngmodule/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NgModule中import、declarations、providers的区别</title>
+      <link>https://p3p3pp3.github.io/post/2019/import-declarations-providers-different.html</link>
+      <pubDate>Thu, 04 Apr 2019 14:02:40 +0800</pubDate>
+      
+      <guid>https://p3p3pp3.github.io/post/2019/import-declarations-providers-different.html</guid>
+      <description>imports makes the exported declarations of other modules available in the current module declarations are to make directives (including components and pipes) from the current module available to other directives in the current module. Selectors of directives, components or pipes are only matched against the HTML if they are declared or imported. providers are to make services and values known to DI (dependency injection). They are added to the root</description>
+    </item>
+    
+  </channel>
+</rss>

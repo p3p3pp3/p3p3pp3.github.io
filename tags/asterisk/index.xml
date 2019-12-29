@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>asterisk on P3的Blog</title>
+    <link>https://p3p3pp3.github.io/tags/asterisk.html</link>
+    <description>Recent content in asterisk on P3的Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 08 Dec 2009 08:02:16 +0000</lastBuildDate>
+    
+	<atom:link href="https://p3p3pp3.github.io/tags/asterisk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>te110p兼容卡噪音，难道与主板有关？</title>
+      <link>https://p3p3pp3.github.io/post/2009/e1%E5%99%AA%E9%9F%B3.html</link>
+      <pubDate>Tue, 08 Dec 2009 08:02:16 +0000</pubDate>
+      
+      <guid>https://p3p3pp3.github.io/post/2009/e1%E5%99%AA%E9%9F%B3.html</guid>
+      <description>上1E中继线，需要一块Asterisk下的卡，我图便宜买了块兼容卡，经过一顿折腾总算搞定了（见实战中国电信数字中继），但是还有一点问题没有解</description>
+    </item>
+    
+    <item>
+      <title>实战Trixbox&#43;TE110P使用中国电信数字E1</title>
+      <link>https://p3p3pp3.github.io/post/2009/%E6%96%B0%E8%A3%85e1.html</link>
+      <pubDate>Tue, 03 Nov 2009 11:31:57 +0000</pubDate>
+      
+      <guid>https://p3p3pp3.github.io/post/2009/%E6%96%B0%E8%A3%85e1.html</guid>
+      <description>单位办理了2M的E1接入，需要调试以前运行的PC-PBX使用E1线路。一些要点记录下来可以节省大家不少时间： 1、要向电信声明你用的是PRI卡</description>
+    </item>
+    
+  </channel>
+</rss>

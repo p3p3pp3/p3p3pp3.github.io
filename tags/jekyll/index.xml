@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jekyll on P3的Blog</title>
+    <link>https://p3p3pp3.github.io/tags/jekyll.html</link>
+    <description>Recent content in jekyll on P3的Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 21 Feb 2019 16:31:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://p3p3pp3.github.io/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Migrate to Hugo</title>
+      <link>https://p3p3pp3.github.io/post/2019/migrate-to-hugo.html</link>
+      <pubDate>Thu, 21 Feb 2019 16:31:18 +0800</pubDate>
+      
+      <guid>https://p3p3pp3.github.io/post/2019/migrate-to-hugo.html</guid>
+      <description>折腾的目的是为了不再折腾 使用静态网站生成器来写blog，我希望能： 通过文件夹层级来按照年度、月度组织博客内容 在本地创建的每个{blognam</description>
+    </item>
+    
+  </channel>
+</rss>
