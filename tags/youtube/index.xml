@@ -1,1 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>youtube on P3的Blog</title><link>https://p3p3pp3.github.io/tags/youtube.html</link><description>Recent content in youtube on P3的Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 18 May 2021 14:46:46 +0800</lastBuildDate><atom:link href="https://p3p3pp3.github.io/tags/youtube/index.xml" rel="self" type="application/rss+xml"/><item><title>从youtube下载视频到本地并合成字幕</title><link>https://p3p3pp3.github.io/post/2021/%E4%BB%8Eyoutube%E4%B8%8B%E8%BD%BD%E8%A7%86%E9%A2%91%E5%88%B0%E6%9C%AC%E5%9C%B0%E5%B9%B6%E5%90%88%E6%88%90%E5%AD%97%E5%B9%95.html</link><pubDate>Tue, 18 May 2021 14:46:46 +0800</pubDate><guid>https://p3p3pp3.github.io/post/2021/%E4%BB%8Eyoutube%E4%B8%8B%E8%BD%BD%E8%A7%86%E9%A2%91%E5%88%B0%E6%9C%AC%E5%9C%B0%E5%B9%B6%E5%90%88%E6%88%90%E5%AD%97%E5%B9%95.html</guid><description>下载 下载 youtube-dl http://ytdl-org.github.io/youtube-dl/ 下载 ffmpeg http://ffmpeg.org/download.html#build-windows 以上两组文件解压到同一个目录中即可 使用 列出视频包含的字幕类型（使用本地代理）： 1 .\youtube-dl.exe --list-subs --proxy 127.0.0.1:7890 https://www.youtube.com/watch?v=Yvfz4HGtoPc 会得到如下反馈： 1 2 3 4 ...</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>youtube on P3的Blog</title><link>https://p3p3pp3.github.io/tags/youtube.html</link><description>Recent content in youtube on P3的Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 18 May 2021 14:46:46 +0800</lastBuildDate><atom:link href="https://p3p3pp3.github.io/tags/youtube/index.xml" rel="self" type="application/rss+xml"/><item><title>从youtube下载视频到本地并合成字幕</title><link>https://p3p3pp3.github.io/post/2021/%E4%BB%8Eyoutube%E4%B8%8B%E8%BD%BD%E8%A7%86%E9%A2%91%E5%88%B0%E6%9C%AC%E5%9C%B0%E5%B9%B6%E5%90%88%E6%88%90%E5%AD%97%E5%B9%95.html</link><pubDate>Tue, 18 May 2021 14:46:46 +0800</pubDate><guid>https://p3p3pp3.github.io/post/2021/%E4%BB%8Eyoutube%E4%B8%8B%E8%BD%BD%E8%A7%86%E9%A2%91%E5%88%B0%E6%9C%AC%E5%9C%B0%E5%B9%B6%E5%90%88%E6%88%90%E5%AD%97%E5%B9%95.html</guid><description>&lt;h1 id="下载">下载&lt;/h1>
+&lt;ul>
+&lt;li>下载 &lt;code>youtube-dl&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>&lt;a href="http://ytdl-org.github.io/youtube-dl/">http://ytdl-org.github.io/youtube-dl/&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>下载 &lt;code>ffmpeg&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>&lt;a href="http://ffmpeg.org/download.html#build-windows">http://ffmpeg.org/download.html#build-windows&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>以上两组文件解压到&lt;strong>同一个目录&lt;/strong>中即可&lt;/p></description></item></channel></rss>
