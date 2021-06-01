@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>P3的Blog</title><link>https://p3p3pp3.github.io/</link><description>Recent content on P3的Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 31 May 2021 12:25:20 +0800</lastBuildDate><atom:link href="https://p3p3pp3.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Spotify敏捷模式详解3:工程文化</title><link>https://p3p3pp3.github.io/post/2021/spotify%E6%95%8F%E6%8D%B7%E6%A8%A1%E5%BC%8F%E8%AF%A6%E8%A7%A3-3-%E5%B7%A5%E7%A8%8B%E6%96%87%E5%8C%96.html</link><pubDate>Mon, 31 May 2021 12:25:20 +0800</pubDate><guid>https://p3p3pp3.github.io/post/2021/spotify%E6%95%8F%E6%8D%B7%E6%A8%A1%E5%BC%8F%E8%AF%A6%E8%A7%A3-3-%E5%B7%A5%E7%A8%8B%E6%96%87%E5%8C%96.html</guid><description>&lt;h3 id="摘要">&lt;strong>摘要&lt;/strong>&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>P3的Blog</title><link>https://p3p3pp3.github.io/</link><description>Recent content on P3的Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 01 Jun 2021 15:19:07 +0800</lastBuildDate><atom:link href="https://p3p3pp3.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>What happens when there are competing smartphone app stores</title><link>https://p3p3pp3.github.io/post/2021/competing-smartphone-app-stores.html</link><pubDate>Tue, 01 Jun 2021 15:19:07 +0800</pubDate><guid>https://p3p3pp3.github.io/post/2021/competing-smartphone-app-stores.html</guid><description>&lt;h2 id="many-android-app-stores-in-china">Many Android app stores in China&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>Consolidation is happening:&lt;/p>
+&lt;ul>
+&lt;li>~7500 in 2012&lt;/li>
+&lt;li>~400 in 2015&lt;/li>
+&lt;li>~200 in 2017&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>There are ~100 that matter&amp;hellip; and ~20 that really matter.&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>Spotify敏捷模式详解3:工程文化</title><link>https://p3p3pp3.github.io/post/2021/spotify%E6%95%8F%E6%8D%B7%E6%A8%A1%E5%BC%8F%E8%AF%A6%E8%A7%A3-3-%E5%B7%A5%E7%A8%8B%E6%96%87%E5%8C%96.html</link><pubDate>Mon, 31 May 2021 12:25:20 +0800</pubDate><guid>https://p3p3pp3.github.io/post/2021/spotify%E6%95%8F%E6%8D%B7%E6%A8%A1%E5%BC%8F%E8%AF%A6%E8%A7%A3-3-%E5%B7%A5%E7%A8%8B%E6%96%87%E5%8C%96.html</guid><description>&lt;h3 id="摘要">&lt;strong>摘要&lt;/strong>&lt;/h3>
 &lt;p>在本系列文章的第一篇和第二篇，我们分别介绍了Spotify的敏捷研发团队和研发过程。&lt;/p>
 &lt;p>在本篇，我们将介绍Spotify的敏捷工程文化。&lt;/p></description></item><item><title>Spotify敏捷模式详解2:研发过程</title><link>https://p3p3pp3.github.io/post/2021/spotify%E6%95%8F%E6%8D%B7%E6%A8%A1%E5%BC%8F%E8%AF%A6%E8%A7%A3-2-%E7%A0%94%E5%8F%91%E8%BF%87%E7%A8%8B.html</link><pubDate>Mon, 31 May 2021 12:24:57 +0800</pubDate><guid>https://p3p3pp3.github.io/post/2021/spotify%E6%95%8F%E6%8D%B7%E6%A8%A1%E5%BC%8F%E8%AF%A6%E8%A7%A3-2-%E7%A0%94%E5%8F%91%E8%BF%87%E7%A8%8B.html</guid><description>&lt;h3 id="摘要">&lt;strong>摘要&lt;/strong>&lt;/h3>
 &lt;p>在本系列文章的第一篇，我们介绍了Spotify的敏捷研发团队，以及它独特的组织架构。在本篇，我们将介绍Spotify基于敏捷开发和精益创业思维的产品研发过程。&lt;/p>
