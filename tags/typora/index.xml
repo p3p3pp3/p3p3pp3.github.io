@@ -2,16 +2,16 @@
 &lt;p>使用hugo搞blog站，每一篇对应一个.md文件，文件头是这样的：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;span class="lnt">2
 &lt;/span>&lt;span class="lnt">3
 &lt;/span>&lt;span class="lnt">4
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">---
-title: &amp;#34;从Typora打印hugo的md文件自动添加标题&amp;#34;
-date: 2021-05-18T15:19:42+08:00
----
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">---
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">title: &amp;#34;从Typora打印hugo的md文件自动添加标题&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date: 2021-05-18T15:19:42+08:00
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">---
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>从Typora将hugo的博客内容导出PDF打印的时候，这里的title是被忽略的，造成导出的文件没有标题。&lt;/p></description></item><item><title>hexo+typora完美图片上传</title><link>https://p3p3pp3.github.io/post/2019/hexo-typora%E5%AE%8C%E7%BE%8E%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0.html</link><pubDate>Mon, 04 Feb 2019 01:26:26 +0000</pubDate><guid>https://p3p3pp3.github.io/post/2019/hexo-typora%E5%AE%8C%E7%BE%8E%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0.html</guid><description>Typora设置：文件-&amp;gt;偏好设置 hexo设置： hexo的_config.yml: 1 post_asset_folder: true 安装插件: 1 npm install https://github.com/CodeFalling/hexo-asset-image --save 这样设置的结果，本地在Ty</description></item><item><title>第一篇Hexo博客</title><link>https://p3p3pp3.github.io/post/2019/%E7%AC%AC%E4%B8%80%E7%AF%87hexo%E5%8D%9A%E5%AE%A2.html</link><pubDate>Sun, 03 Feb 2019 23:20:26 +0000</pubDate><guid>https://p3p3pp3.github.io/post/2019/%E7%AC%AC%E4%B8%80%E7%AF%87hexo%E5%8D%9A%E5%AE%A2.html</guid><description>终于&amp;hellip; 经历了不靠谱的BSP，自建的Typecho也是命运多舛； 最后还是决定用github的托管加上hexo静态生成博客； 保留所</description></item></channel></rss>
