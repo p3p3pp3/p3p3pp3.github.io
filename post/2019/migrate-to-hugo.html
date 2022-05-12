@@ -26,7 +26,7 @@ blog1.assets --> image3.jpg
 那我就有些担心，当 blog 和 image 越来越多后，是不是会很麻烦。</p><h2 id=深入的使用hugo有惊喜>深入的使用hugo，有惊喜</h2><p>第一印象</p><ul><li>hugo 是用 go 写的，安装简单，目录干净（没有 node module 啥的）</li><li>快，真的非常快。</li></ul><p>在<code>config.toml</code>中添加：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>uglyurls = true
 </span></span></code></pre></td></tr></table></div></div><p>无需任何多余处理，生成的静态内容保留原目录组织形式和文件名，附件引用渲染都正确。
-hugo 正确、简洁、干脆利落的解决了我的需求。</p><h2 id=后续>后续</h2><p>又折腾了wercker做自动化构建发布：</p><blockquote><p><a href=https://gohugo.io/hosting-and-deployment/deployment-with-wercker/>https://gohugo.io/hosting-and-deployment/deployment-with-wercker/</a></p></blockquote><p>wercker 被 oracle 收购后，UI 做了很大幅度的调整，文档和实际的界面有一些出入，后续我会再写一篇 blog 把流程梳理一下，还是很简单的。</p><p>接下来，从以前的blog备份中转换数据，按照日期重新组织进来；
+hugo 正确、简洁、干脆利落的解决了我的需求。</p><h2 id=后续>后续</h2><p>又折腾了wercker做自动化构建发布：</p><blockquote><p><a href=https://gohugo.io/hosting-and-deployment/deployment-with-wercker/ target=_blank>https://gohugo.io/hosting-and-deployment/deployment-with-wercker/</a></p></blockquote><p>wercker 被 oracle 收购后，UI 做了很大幅度的调整，文档和实际的界面有一些出入，后续我会再写一篇 blog 把流程梳理一下，还是很简单的。</p><p>接下来，从以前的blog备份中转换数据，按照日期重新组织进来；
 这个工作量还是很大的，以前的博客尸体有 msnspace 的 livewriter 备份、wordpress 的数据库、typecho 的文本存储；
 对以前的沙雕历史做个回顾也是挺有意思的。</p></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
 <span class=item-content>p3p3pp3</span></p><p class=copyright-item><span class=item-title>上次更新</span>

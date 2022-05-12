@@ -12,7 +12,7 @@
 </span></span><span class=line><span class=cl>If you feel that this should not be logged as an ERROR, you can ignore it by adding this to your site config:
 </span></span><span class=line><span class=cl>ignoreErrors = [&#34;error-remote-getjson&#34;]
 </span></span></code></pre></td></tr></table></div></div><p>我猜测可能是这边路由器没有翻墙，在处理包含了twitter shortcut的blog出现错误。
-找到了一个处理方法：</p><blockquote><p><a href=https://github.com/gohugoio/hugo/issues/3869>https://github.com/gohugoio/hugo/issues/3869</a></p></blockquote><p>对系统的shortcut进行覆盖，在 <code>layouts\shortcodes</code>下创建一个<code>tweet.html</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+找到了一个处理方法：</p><blockquote><p><a href=https://github.com/gohugoio/hugo/issues/3869 target=_blank>https://github.com/gohugoio/hugo/issues/3869</a></p></blockquote><p>对系统的shortcut进行覆盖，在 <code>layouts\shortcodes</code>下创建一个<code>tweet.html</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4

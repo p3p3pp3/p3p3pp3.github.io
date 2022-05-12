@@ -6,7 +6,7 @@
 <span class=more-meta>约 516 字</span>
 <span class=more-meta>预计阅读 2 分钟</span>
 <span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> 次阅读</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents></nav></div></div><div class=post-content><p>1、下载：
-<a href=http://www.mongodb.org/downloads>http://www.mongodb.org/downloads</a>
+<a href=http://www.mongodb.org/downloads target=_blank>http://www.mongodb.org/downloads</a>
 在32位windows下，mongodb可管理的数据库尺寸最大为4G，生产环境下必须64位才有应用价值。</p><p>2、配置安装：
 解压缩安装包，建立一个bat文件运行，以下是指定了工作的端口号和数据库文件所在的路径：
 mongod.exe -port 13566 -dbpath D:\MongoDb\Data
@@ -43,7 +43,7 @@ collection table</p><p>所以，我们先：</p><div class=highlight><div class=
 </span></span><span class=line><span class=cl>db.customer.find({&#34;name&#34;:/p*/}) //模糊查询了，这个你懂的 
 </span></span><span class=line><span class=cl>db.customer.remove({&#34;name&#34;:&#34;p3&#34;}) //delete... 
 </span></span><span class=line><span class=cl>db.customer.findAndModify({update:{$inc:{&#39;age&#39;:1}},query:{&#39;name&#39;:&#39;p3&#39;},new:true}) //找到name为p3的，在年龄上+1，然后返回修改后的记录 
-</span></span></code></pre></td></tr></table></div></div><p>Mongodb支持很多牛逼的高级查询和更新特性，详细的就请阅读文档了：</p><blockquote><p><a href=http://www.mongodb.org/display/DOCS/Querying>http://www.mongodb.org/display/DOCS/Querying</a></p></blockquote></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
+</span></span></code></pre></td></tr></table></div></div><p>Mongodb支持很多牛逼的高级查询和更新特性，详细的就请阅读文档了：</p><blockquote><p><a href=http://www.mongodb.org/display/DOCS/Querying target=_blank>http://www.mongodb.org/display/DOCS/Querying</a></p></blockquote></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
 <span class=item-content>p3p3pp3</span></p><p class=copyright-item><span class=item-title>上次更新</span>
 <span class=item-content>2010-09-30</span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/mongodb.html>mongodb</a></div><nav class=post-nav><a class=prev href=/post/2010/%E7%99%BD%E6%97%A5%E6%A2%A6.html><i class="iconfont icon-left"></i>
 <span class="prev-text nav-default">白日梦</span>
